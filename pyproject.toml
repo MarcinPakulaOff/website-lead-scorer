@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "website-lead-scorer"
+version = "0.1.0"
+description = "Score a list of small businesses by how much they need a new website: no site, no HTTPS, not mobile-friendly, slow, outdated."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Marcin Pakuła" }]
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+lead-score = "lead_scorer.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
